@@ -8,8 +8,6 @@ import (
 	"github.com/hashicorp/go-hclog"
 	"github.com/yaoapp/gou/application"
 	"github.com/yaoapp/kun/exception"
-	"github.com/yaoapp/yao/aigc"
-	"github.com/yaoapp/yao/api"
 	"github.com/yaoapp/yao/cert"
 	"github.com/yaoapp/yao/config"
 	"github.com/yaoapp/yao/connector"
@@ -17,19 +15,14 @@ import (
 	"github.com/yaoapp/yao/flow"
 	"github.com/yaoapp/yao/fs"
 	"github.com/yaoapp/yao/i18n"
-	"github.com/yaoapp/yao/importer"
 	"github.com/yaoapp/yao/model"
-	"github.com/yaoapp/yao/neo"
 	"github.com/yaoapp/yao/pack"
 	"github.com/yaoapp/yao/query"
 	"github.com/yaoapp/yao/runtime"
 	"github.com/yaoapp/yao/script"
 	"github.com/yaoapp/yao/share"
-	"github.com/yaoapp/yao/socket"
 	"github.com/yaoapp/yao/store"
 	"github.com/yaoapp/yao/task"
-	"github.com/yaoapp/yao/websocket"
-	"github.com/yaoapp/yao/widget"
 	"github.com/yaoapp/yao/widgets"
 )
 
@@ -40,13 +33,13 @@ func CustomLoad(cfg config.Config, logger hclog.Logger) (err error) {
 	exception.Mode = cfg.Mode
 
 	// SET XGEN_BASE
-	adminRoot := "yao"
-	if share.App.Optional != nil {
-		if root, has := share.App.Optional["adminRoot"]; has {
-			adminRoot = fmt.Sprintf("%v", root)
-		}
-	}
-	os.Setenv("XGEN_BASE", adminRoot)
+	// adminRoot := "yao"
+	// if share.App.Optional != nil {
+	// 	if root, has := share.App.Optional["adminRoot"]; has {
+	// 		adminRoot = fmt.Sprintf("%v", root)
+	// 	}
+	// }
+	// os.Setenv("XGEN_BASE", adminRoot)
 
 	// load the application
 	err = loadApp(cfg.AppSource)
@@ -135,28 +128,28 @@ func CustomLoad(cfg config.Config, logger hclog.Logger) (err error) {
 	}
 
 	// Load Importers
-	err = importer.Load(cfg)
-	if err != nil {
-		printErr(cfg.Mode, "Plugin", err)
-	}
+	// err = importer.Load(cfg)
+	// if err != nil {
+	// 	printErr(cfg.Mode, "Importer", err)
+	// }
 
 	// Load Apis
-	err = api.Load(cfg) // 加载业务接口 API
-	if err != nil {
-		printErr(cfg.Mode, "API", err)
-	}
+	// err = api.Load(cfg) // 加载业务接口 API
+	// if err != nil {
+	// 	printErr(cfg.Mode, "API", err)
+	// }
 
 	// Load Sockets
-	err = socket.Load(cfg) // Load sockets
-	if err != nil {
-		printErr(cfg.Mode, "Socket", err)
-	}
+	// err = socket.Load(cfg) // Load sockets
+	// if err != nil {
+	// 	printErr(cfg.Mode, "Socket", err)
+	// }
 
 	// Load websockets (client mode)
-	err = websocket.Load(cfg)
-	if err != nil {
-		printErr(cfg.Mode, "WebSocket", err)
-	}
+	// err = websocket.Load(cfg)
+	// if err != nil {
+	// 	printErr(cfg.Mode, "WebSocket", err)
+	// }
 
 	// Load tasks
 	err = task.Load(cfg)
@@ -171,16 +164,16 @@ func CustomLoad(cfg config.Config, logger hclog.Logger) (err error) {
 	// }
 
 	// Load AIGC
-	err = aigc.Load(cfg)
-	if err != nil {
-		printErr(cfg.Mode, "AIGC", err)
-	}
+	// err = aigc.Load(cfg)
+	// if err != nil {
+	// 	printErr(cfg.Mode, "AIGC", err)
+	// }
 
 	// Load Neo
-	err = neo.Load(cfg)
-	if err != nil {
-		printErr(cfg.Mode, "Neo", err)
-	}
+	// err = neo.Load(cfg)
+	// if err != nil {
+	// 	printErr(cfg.Mode, "Neo", err)
+	// }
 
 	// Load Custom Widget
 	// err = widget.Load(cfg)
@@ -189,10 +182,10 @@ func CustomLoad(cfg config.Config, logger hclog.Logger) (err error) {
 	// }
 
 	// Load Custom Widget Instances
-	err = widget.LoadInstances()
-	if err != nil {
-		printErr(cfg.Mode, "Widget", err)
-	}
+	// err = widget.LoadInstances()
+	// if err != nil {
+	// 	printErr(cfg.Mode, "Widget", err)
+	// }
 
 	// // Load SUI
 	// err = sui.Load(cfg)

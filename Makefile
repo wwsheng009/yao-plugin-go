@@ -5,4 +5,4 @@ linux-release: clean
 clean: 
 	rm -rf ./tmp
 	rm -rf .tmp
-	rm -rf dist
+	rm -rf yaoapp/plugins/goplugin.so

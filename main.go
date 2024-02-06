@@ -108,16 +108,14 @@ var myPlugin *DemoPlugin
 
 // 生成插件时函数名修改成main
 func main() {
-	utils.Init()
-	cmd.Boot()
+	utils.Init()//初始化处理器，同时可以增加自定义的处理器。
+	cmd.Boot() //加载配置文件
+	//插件初始化
 	myPlugin = &DemoPlugin{}
 	myPlugin.setLogFile()
+	
+	// 自定义yao应用的加载过程
 	// load the application engine
 	CustomLoad(config.Conf, myPlugin.Logger)
-
-	// if err != nil {
-	// 	pluginapi.Logger.Log(hclog.Trace, "plugin start failed", err.Error())
-	// 	os.Exit(1)
-	// }
 	grpc.Serve(myPlugin)
 }
