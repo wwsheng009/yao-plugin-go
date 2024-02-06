@@ -14,7 +14,6 @@ require (
 	github.com/SAP/go-hdb v1.5.8 // indirect
 	github.com/TylerBrock/colorjson v0.0.0-20200706003622-8a50f05110d2 // indirect
 	github.com/andybalholm/cascadia v1.3.2 // indirect
-	github.com/antonmedv/expr v1.15.4 // indirect
 	github.com/blang/semver v3.5.1+incompatible // indirect
 	github.com/blang/semver/v4 v4.0.0 // indirect
 	github.com/bytedance/sonic v1.10.2 // indirect
@@ -27,6 +26,7 @@ require (
 	github.com/dlclark/regexp2 v1.10.0 // indirect
 	github.com/elazarl/go-bindata-assetfs v1.0.1 // indirect
 	github.com/evanw/esbuild v0.19.5 // indirect
+	github.com/expr-lang/expr v1.15.8 // indirect
 	github.com/fatih/color v1.16.0 // indirect
 	github.com/fsnotify/fsnotify v1.7.0 // indirect
 	github.com/gabriel-vasile/mimetype v1.4.3 // indirect
@@ -107,26 +107,26 @@ require (
 	golang.org/x/exp v0.0.0-20231006140011-7918f672742d // indirect
 	golang.org/x/image v0.14.0 // indirect
 	golang.org/x/mod v0.14.0 // indirect
-	golang.org/x/net v0.18.0 // indirect
+	golang.org/x/net v0.19.0 // indirect
 	golang.org/x/oauth2 v0.14.0 // indirect
 	golang.org/x/sync v0.5.0 // indirect
 	golang.org/x/sys v0.15.0 // indirect
 	golang.org/x/text v0.14.0 // indirect
 	golang.org/x/tools v0.15.0 // indirect
 	google.golang.org/appengine v1.6.8 // indirect
-	google.golang.org/genproto/googleapis/rpc v0.0.0-20231106174013-bbf56f31fb17 // indirect
-	google.golang.org/grpc v1.59.0 // indirect
-	google.golang.org/protobuf v1.31.0 // indirect
+	google.golang.org/genproto/googleapis/rpc v0.0.0-20231212172506-995d672761c0 // indirect
+	google.golang.org/grpc v1.60.1 // indirect
+	google.golang.org/protobuf v1.32.0 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 	rogchap.com/v8go v0.9.0 // indirect
 )
 
-replace github.com/yaoapp/yao => ../../../../yao-my/yao
+replace github.com/yaoapp/yao => ../../wwsheng009/yao
 
-replace github.com/yaoapp/kun => ../../../../yao-my/kun // kun local
+replace github.com/yaoapp/kun => ../../wwsheng009/kun // kun local
 
-replace github.com/yaoapp/xun => ../../../../yao-my/xun // xun local
+replace github.com/yaoapp/xun => ../../wwsheng009/xun // xun local
 
-replace github.com/yaoapp/gou => ../../../../yao-my/gou // gou local
+replace github.com/yaoapp/gou => ../../wwsheng009/gou // gou local
 
-replace rogchap.com/v8go => ../../../../yao-my/v8go
+replace rogchap.com/v8go => ../../wwsheng009/v8go
